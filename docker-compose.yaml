@@ -1,0 +1,85 @@
+services:
+    db:
+        image: postgres:latest
+        container_name: postgres_db
+        environment:
+            POSTGRES_USER: mustak
+            POSTGRES_PASSWORD: CookiesNwaffles@8747#$
+            POSTGRES_DB: cookiesnwaffles
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        networks:
+            - app_network
+
+    admin:
+        build:
+            context: ./admin
+            dockerfile: Dockerfile.dev
+        container_name: strapi_admin
+        environment:
+            DATABASE_CLIENT: postgres
+            DATABASE_HOST: db
+            DATABASE_PORT: 5432
+            DATABASE_NAME: cookiesnwaffles
+            DATABASE_USERNAME: mustak
+            DATABASE_PASSWORD: CookiesNwaffles@8747#$
+            DATABASE_SSL: false
+            NODE_ENV: development
+        volumes:
+            - ./admin:/app
+            - /app/node_modules
+            - ./admin/package-lock.json:/app/package-lock.json
+        depends_on:
+            - db
+        networks:
+            - app_network
+        ports:
+            - "1337:1337"
+        develop:
+            watch:
+                - action: sync
+                  path: ./admin
+                  target: /app
+                  ignore:
+                      - node_modules/
+                - action: rebuild
+                  path: ./admin/package.json
+
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile.dev
+        container_name: nextjs_frontend
+        environment:
+            DATABASE_HOST: db
+            DATABASE_PORT: 5432
+            DATABASE_NAME: cookiesnwaffles
+            DATABASE_USER: mustak
+            DATABASE_PASSWORD: CookiesNwaffles@8747#$
+            NODE_ENV: development
+        volumes:
+            - ./frontend:/src
+            - /src/node_modules
+            - ./frontend/package-lock.json:/src/package-lock.json
+        depends_on:
+            - db
+        networks:
+            - app_network
+        ports:
+            - "3000:3000"
+        develop:
+            watch:
+                - action: sync
+                  path: ./frontend
+                  target: /src
+                  ignore:
+                      - node_modules/
+                - action: rebuild
+                  path: ./frontend/package.json
+networks:
+    app_network:
+
+volumes:
+    postgres_data:

@@ -6,10 +6,11 @@ import {
     CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import HeroSectionText from "./heroSectionText";
 
 const HeroSection = () => {
     return (
-        <section className="w-full h-screen">
+        <section>
             <Carousel
                 opts={{
                     loop: true,
@@ -21,6 +22,7 @@ const HeroSection = () => {
                         // }),
                     ]
                 }
+                className="absolute w-full"
             >
                 <CarouselContent className="h-screen">
                     <CarouselItem>
@@ -35,6 +37,7 @@ const HeroSection = () => {
                     <CarouselItem>...</CarouselItem>
                 </CarouselContent>
             </Carousel>
+            <HeroSectionText />
         </section>
     );
 };

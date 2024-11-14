@@ -2,6 +2,7 @@ import HeroSection from "@/components/heroSection";
 import Navbar from "@/components/navbar";
 import ProductIntro from "@/components/productIntro";
 import ShortMenu from "@/components/shortMenu";
+import WorkingHours from "@/components/workingHours";
 
 const data = [
     {
@@ -43,6 +44,7 @@ export default function Home() {
                 ))}
             </section>
             <ShortMenu />
+            <WorkingHours />
         </>
     );
 }

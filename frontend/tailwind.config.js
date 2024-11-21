@@ -29,6 +29,7 @@ module.exports = {
             },
             backgroundImage: {
                 hours: "url(/assets/hoursBg.png)",
+                pageHero: "url(/assets/page-hero-img.png)",
             },
         },
     },

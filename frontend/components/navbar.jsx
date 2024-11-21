@@ -12,7 +12,6 @@ const Navbar = () => {
                         <Image
                             alt="logo"
                             src="/assets/logo-cookies.svg"
-                            objectFit="contain"
                             width={170}
                             height={60}
                         />

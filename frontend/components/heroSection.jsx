@@ -25,16 +25,18 @@ const HeroSection = () => {
                 className="absolute w-full"
             >
                 <CarouselContent className="h-screen">
-                    <CarouselItem>
-                        <Image
-                            src="/assets/carouselImg-1.png"
-                            layout="fill"
-                            alt="img 1"
-                            objectFit="cover"
-                        />
-                    </CarouselItem>
-                    <CarouselItem>...</CarouselItem>
-                    <CarouselItem>...</CarouselItem>
+                    {[...Array(3)].map((i, j) => (
+                        <CarouselItem key={j} className="relative">
+                            <Image
+                                src="/assets/carouselImg-1.png"
+                                layout="fill"
+                                alt="img 1"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </CarouselItem>
+                    ))}
                 </CarouselContent>
             </Carousel>
             <HeroSectionText />

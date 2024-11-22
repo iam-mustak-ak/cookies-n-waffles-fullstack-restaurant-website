@@ -16,7 +16,9 @@ const OfferCard = () => {
                 </h6>
                 <p className="font-dmSans text-sm leading-[15px]">
                     £7.45 /{" "}
-                    <span className="text-[10px] leading-[14px]">£10.45</span>
+                    <span className="text-[10px] leading-[14px] line-through">
+                        £10.45
+                    </span>
                 </p>
             </div>
         </div>

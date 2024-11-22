@@ -1,12 +1,13 @@
-const DaysCard = ({ left }) => {
+const DaysCard = ({ left, primary }) => {
     const leftRight = {
         left: "justify-end",
         right: "justify-start",
+        color: primary ? "text-primary" : "text-white",
     };
 
     return (
         <div className={`flex ${left ? leftRight.left : leftRight.right}`}>
-            <div className="text-white">
+            <div className={`${leftRight.color}`}>
                 <h4 className="text-[32px] leading-[48px] font-bold mb-2">
                     Monday to Thursday
                 </h4>

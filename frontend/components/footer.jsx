@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <footer className="bg-primary">
             <div className="container">
-                <div className="py-20 grid grid-cols-3 items-start justify-center">
-                    <div className="flex flex-col gap-[30px]">
+                <div className="py-20 grid md:grid-cols-3 items-start md:justify-center">
+                    <div className="flex flex-col gap-[30px] max-md:mb-6">
                         <Image
                             src="/assets/logo-cookies.svg"
                             width={170}
@@ -34,7 +34,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="text-secondary justify-self-center">
+                    <div className="text-secondary md:justify-self-center max-md:mb-6">
                         <h4 className="text-[32px] leading-[96%] font-medium mb-[30px] text-secondary">
                             Useful
                         </h4>
@@ -51,7 +51,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="text-secondary justify-self-end">
+                    <div className="text-secondary md:justify-self-end">
                         <h4 className="text-[32px] leading-[96%] font-medium mb-[30px] text-secondary">
                             Contact info
                         </h4>

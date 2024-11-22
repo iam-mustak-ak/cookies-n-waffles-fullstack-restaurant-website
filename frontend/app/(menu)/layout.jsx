@@ -9,7 +9,7 @@ const MenuLayout = ({ children }) => {
     return (
         <>
             <Navbar />
-            <PageHero />
+            <PageHero title="Our menu’s" />
 
             <div className="container py-[60px] flex gap-[30px]">
                 <Sidebar />

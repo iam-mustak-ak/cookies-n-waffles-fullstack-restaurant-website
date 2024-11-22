@@ -1,16 +1,18 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageHero from "@/components/pageHero";
+import Testimonials from "@/components/testimonials";
 
-const Layout = ({ children }) => {
+const ProductLayout = ({ children }) => {
     return (
         <>
             <Navbar />
-            <PageHero title="Contact Us" />
+            <PageHero title="Product" />
             {children}
+            <Testimonials />
             <Footer />
         </>
     );
 };
 
-export default Layout;
+export default ProductLayout;

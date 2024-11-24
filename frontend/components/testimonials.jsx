@@ -4,10 +4,10 @@ import TestimonialsCard from "./common/testimonialsCard";
 
 const Testimonials = () => {
     return (
-        <section className="pb-20">
+        <section className="pb-14 md:pb-20">
             <div className="container">
-                <div className="flex items-end justify-between mb-[60px]">
-                    <div>
+                <div className="flex flex-col items-start md:items-end justify-between mb-6 md:mb-[60px]">
+                    <div className="max-md:mb-5">
                         <Heading
                             data={{
                                 tagline: "TESTIMONIALS",
@@ -36,7 +36,7 @@ const Testimonials = () => {
                     </div>
                 </div>
 
-                <div className="testimonial-wrapper flex items-center gap-[30px] justify-center">
+                <div className="testimonial-wrapper  flex max-md:flex-col items-center gap-[30px] justify-center">
                     <TestimonialsCard />
                     <TestimonialsCard />
                     <TestimonialsCard />

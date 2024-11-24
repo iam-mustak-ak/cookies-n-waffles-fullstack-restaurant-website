@@ -8,10 +8,10 @@ const DaysCard = ({ left, primary }) => {
     return (
         <div className={`flex ${left ? leftRight.left : leftRight.right}`}>
             <div className={`${leftRight.color}`}>
-                <h4 className="text-[32px] leading-[48px] font-bold mb-2">
+                <h4 className="text-2xl md:text-[32px] leading-[48px] font-bold mb-2">
                     Monday to Thursday
                 </h4>
-                <p className="text-[26px] leading-[26px] font-dmSans font-normal">
+                <p className="text-xl md:text-[26px] leading-[26px] font-dmSans font-normal">
                     14 : 00 <span>-</span> 23 : 59
                 </p>
             </div>

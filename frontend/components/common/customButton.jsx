@@ -19,7 +19,7 @@ const CustomButton = ({
                 `text-lg ${
                     small
                         ? "py-[10px] px-[22px] text-base "
-                        : "py-[26px] px-[46px] text-base"
+                        : "py-4 md:py-[26px] px-9 md:px-[46px] text-base"
                 } uppercase ${
                     option?.filled
                         ? option?.primary

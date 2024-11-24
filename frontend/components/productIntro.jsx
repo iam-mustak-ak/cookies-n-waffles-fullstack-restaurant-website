@@ -5,11 +5,11 @@ import Heading from "./common/heading";
 
 const ProductIntro = ({ position, data }) => {
     return (
-        <div className="container grid grid-cols-2">
+        <div className="container grid md:grid-cols-2">
             <div
                 className={`${
                     position == "left" && "order-2"
-                } bg-primary/5 p-20 h-full flex flex-col justify-between`}
+                } bg-primary/5 p-5 md:p-20 h-full flex flex-col justify-between`}
             >
                 <div>
                     <Heading data={data} />

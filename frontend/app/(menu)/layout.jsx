@@ -1,9 +1,7 @@
 import Sidebar from "@/components/common/sidebar";
-import Footer from "@/components/footer";
 import Gallery from "@/components/gallery";
 import Navbar from "@/components/navbar";
 import PageHero from "@/components/pageHero";
-import Testimonials from "@/components/testimonials";
 
 const MenuLayout = ({ children }) => {
     return (
@@ -16,8 +14,6 @@ const MenuLayout = ({ children }) => {
                 <main>{children}</main>
             </div>
             <Gallery control={false} />
-            <Testimonials />
-            <Footer />
         </>
     );
 };

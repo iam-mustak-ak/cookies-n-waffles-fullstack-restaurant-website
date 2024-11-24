@@ -13,7 +13,9 @@ const FaQ = () => {
 
                     <span className={`h-[3px] bg-primary  w-[100px]`}></span>
                 </div>
-                <h2 className={`text-8xl leading-[96%] font-medium`}>
+                <h2
+                    className={`text-6xl md:text-8xl leading-[96%] font-medium`}
+                >
                     Frequently Ask Question
                 </h2>
             </div>

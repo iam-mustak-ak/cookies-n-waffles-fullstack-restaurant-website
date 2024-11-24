@@ -14,7 +14,7 @@ const Heading = ({ data, noMargin, secondary, right }) => {
                     ></span>
                 )}
                 <h4
-                    className={`font-dmSans text-2xl font-semibold uppercase leading-[93%] `}
+                    className={`font-dmSans text-2xl max-md:mb-4 font-semibold uppercase leading-[93%] `}
                 >
                     {data.tagline}
                 </h4>
@@ -27,7 +27,7 @@ const Heading = ({ data, noMargin, secondary, right }) => {
                 )}
             </div>
             <h2
-                className={`text-8xl leading-[96%] ${
+                className={`text-6xl md:text-8xl leading-[96%] ${
                     right && "text-right"
                 } font-medium ${secondary && "text-secondary"} ${
                     !noMargin && "mb-6"

@@ -1,5 +1,8 @@
+import Testimonials from "@/components/testimonials";
 import "./globals.css";
 
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 
 const playfair_Display = Playfair_Display({ subsets: ["latin"] });
@@ -19,7 +22,11 @@ export default function RootLayout({ children }) {
             <body
                 className={`${playfair_Display.className} ${dm_Sans.variable} antialiased relative`}
             >
+                <Navbar />
                 {children}
+                <Testimonials />
+
+                <Footer />
             </body>
         </html>
     );

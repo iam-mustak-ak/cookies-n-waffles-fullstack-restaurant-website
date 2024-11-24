@@ -6,8 +6,8 @@ const WorkingHours = () => {
     return (
         <section className="bg-hours bg-cover bg-center bg-no-repeat ">
             <div className="container">
-                <div className="py-[121px] px-[75px]">
-                    <div className="grid grid-cols-2 items-center justify-between gap-[100px]">
+                <div className="py-14 md:py-[121px] px-0 md:px-[75px]">
+                    <div className="grid md:grid-cols-2 items-center justify-between gap-[100px]">
                         <div className="flex flex-col  gap-4">
                             <Heading
                                 data={{

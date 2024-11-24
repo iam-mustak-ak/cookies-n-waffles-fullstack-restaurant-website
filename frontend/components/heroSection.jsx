@@ -24,7 +24,7 @@ const HeroSection = () => {
                 }
                 className="absolute w-full"
             >
-                <CarouselContent className="h-screen">
+                <CarouselContent className="h-[70vh] md:h-screen">
                     {[...Array(3)].map((i, j) => (
                         <CarouselItem key={j} className="relative">
                             <Image

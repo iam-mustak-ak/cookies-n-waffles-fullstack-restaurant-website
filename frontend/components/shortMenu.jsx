@@ -6,10 +6,10 @@ import ShortMenuCard from "./shortMenuCard";
 
 const ShortMenu = () => {
     return (
-        <section className="pb-20">
+        <section className="pb-20 max-md:pt-14">
             <div className="container">
-                <div className="flex items-end justify-between mb-20">
-                    <div>
+                <div className="flex max-md:flex-col items-start md:items-end justify-between pb-6 md:mb-20">
+                    <div className="max-md:mb-5">
                         <Heading
                             data={{
                                 tagline: "OUR MENU",
@@ -31,7 +31,7 @@ const ShortMenu = () => {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-2 gap-[30px]">
+                <div className="grid md:grid-cols-2 gap-[30px]">
                     <div className="menus flex flex-col gap-[10px]">
                         <ShortMenuCard />
                         <ShortMenuCard />

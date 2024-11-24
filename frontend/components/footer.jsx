@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="bg-primary">
             <div className="container">
-                <div className="py-20 grid md:grid-cols-3 items-start md:justify-center">
+                <div className="py-14 md:py-20 grid md:grid-cols-3 items-start md:justify-center">
                     <div className="flex flex-col gap-[30px] max-md:mb-6">
                         <Image
                             src="/assets/logo-cookies.svg"

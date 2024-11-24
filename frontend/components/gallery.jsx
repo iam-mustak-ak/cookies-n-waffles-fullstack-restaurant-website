@@ -3,9 +3,9 @@ import Heading from "./common/heading";
 
 const Gallery = ({ control }) => {
     return (
-        <section className="py-20">
+        <section className="py-14 md:py-20">
             <div className="container">
-                <div className="mb-[60px]">
+                <div className="mb-6 md:mb-[60px]">
                     <Heading
                         data={{
                             tagline: "gallery",
@@ -16,7 +16,7 @@ const Gallery = ({ control }) => {
                     />
                 </div>
 
-                <div className="columns-3 gap-[30px] ">
+                <div className="columns-3 gap-2 md:gap-[30px] ">
                     <CustomImage src="/assets/cookie.png" aspect="" />
                     <CustomImage src="/assets/cookie.png" />
                     <CustomImage src="/assets/cookie.png" />

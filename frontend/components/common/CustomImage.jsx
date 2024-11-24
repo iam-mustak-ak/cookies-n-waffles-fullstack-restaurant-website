@@ -9,7 +9,7 @@ const CustomImage = ({ aspect = "square", src }) => {
             alt="gallery Image"
             className={`${
                 aspect === "square" ? "aspect-square" : "aspect-video"
-            } object-cover w-full mb-[30px]`}
+            } object-cover w-full mb-2 md:mb-[30px]`}
         />
     );
 };

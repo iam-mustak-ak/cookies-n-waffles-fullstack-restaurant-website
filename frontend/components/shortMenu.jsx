@@ -37,7 +37,7 @@ const ShortMenu = ({ shortMenu }) => {
                             <ShortMenuCard menu={menu} key={menu?.documentId} />
                         ))}
                     </div>
-                    <ShortMenuImage />
+                    <ShortMenuImage firstItem={shortMenu} />
                 </div>
             </div>
         </section>

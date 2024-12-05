@@ -2,9 +2,17 @@
 
 import useStore from "@/store/store";
 import Image from "next/image";
+import { useEffect } from "react";
 
-const ShortMenuImage = () => {
-    const { shortMenuItem } = useStore();
+const ShortMenuImage = ({ firstItem }) => {
+    const { shortMenuItem, setShortMenuImage } = useStore();
+
+    useEffect(() => {
+        setShortMenuImage({
+            url: firstItem[0]?.picture[0]?.url,
+            id: firstItem[0]?.documentId,
+        });
+    }, []);
 
     console.log(shortMenuItem);
     return (

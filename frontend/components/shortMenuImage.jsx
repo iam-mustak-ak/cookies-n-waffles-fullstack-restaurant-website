@@ -4,16 +4,22 @@ import useStore from "@/store/store";
 import Image from "next/image";
 
 const ShortMenuImage = () => {
-    const { shortMenuImage } = useStore();
+    const { shortMenuItem } = useStore();
+
+    console.log(shortMenuItem);
     return (
         <div className="image p-[30px] bg-primary/5">
-            <Image
-                src={shortMenuImage || null}
-                alt="image"
-                className="w-full h-full"
-                width={570}
-                height={570}
-            />
+            {shortMenuItem?.url ? (
+                <Image
+                    src={shortMenuItem?.url}
+                    alt="image"
+                    className="w-full h-full"
+                    width={570}
+                    height={570}
+                />
+            ) : (
+                <p>No Image Found</p>
+            )}
         </div>
     );
 };

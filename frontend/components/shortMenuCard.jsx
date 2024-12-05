@@ -4,18 +4,23 @@ import useStore from "@/store/store";
 import { useCallback } from "react";
 
 const ShortMenuCard = ({ menu }) => {
-    const { shortMenuImage, setShortMenuImage } = useStore();
+    const { shortMenuItem, setShortMenuImage } = useStore();
     const tagString = menu?.tags?.map((tag) => tag?.tag)?.join(" | ");
 
     const handleImageClick = useCallback(() => {
-        setShortMenuImage(menu?.picture[0]?.url);
+        setShortMenuImage({
+            url: menu?.picture[0]?.url,
+            id: menu?.documentId,
+        });
     }, []);
 
     return (
         <div
             onClick={handleImageClick}
             onMouseOver={handleImageClick}
-            className="p-3 hover:bg-primary/5 "
+            className={`p-3 ${
+                shortMenuItem?.id === menu?.documentId && "bg-primary/5"
+            } hover:bg-primary/5`}
         >
             <div className="border-b flex items-center justify-between pb-3 border-primary">
                 <div className="info">

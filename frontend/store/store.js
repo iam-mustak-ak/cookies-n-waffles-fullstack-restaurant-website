@@ -1,10 +1,17 @@
 import { create } from "zustand";
 
 const useStore = create((set) => ({
-    shortMenuImage: "",
-    setShortMenuImage: (url) =>
+    shortMenuItem: {
+        url: "",
+        id: "",
+    },
+    setShortMenuImage: ({ url, id }) =>
         set((state) => ({
-            shortMenuImage: url,
+            shortMenuItem: {
+                ...state.shortMenuItem,
+                url,
+                id,
+            },
         })),
 }));
 

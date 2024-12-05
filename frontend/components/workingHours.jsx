@@ -1,8 +1,11 @@
+import { getWorkingHours } from "@/data/homePageData";
 import CustomButton from "./common/customButton";
 import Heading from "./common/heading";
 import DaysCard from "./daysCard";
 
-const WorkingHours = () => {
+const WorkingHours = async () => {
+    const workingHours = await getWorkingHours();
+
     return (
         <section className="bg-hours bg-cover bg-center bg-no-repeat ">
             <div className="container">
@@ -30,10 +33,13 @@ const WorkingHours = () => {
                         </div>
 
                         <div className="bg-primary p-10 flex flex-col gap-4">
-                            <DaysCard />
-                            <DaysCard left />
-                            <DaysCard />
-                            <DaysCard left />
+                            {workingHours?.map((hours) => (
+                                <DaysCard
+                                    key={hours.id}
+                                    position={hours?.position}
+                                    data={hours}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

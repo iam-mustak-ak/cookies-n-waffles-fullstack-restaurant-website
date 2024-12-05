@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const Page = async ({ params }) => {
     const category = (await params).category;
-    console.log(category);
     return (
         <>
             <PageHeader title="All Menu" count={64} />

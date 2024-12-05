@@ -31,7 +31,7 @@ const ProductIntro = ({ position, data }) => {
             </div>
             <div className={`h-full w-full ${position == "left" && "order-1"}`}>
                 <Image
-                    src={data.image}
+                    src={data?.productImage?.url}
                     sizes="100vw"
                     className="w-full h-auto"
                     alt="cookie"

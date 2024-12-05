@@ -1,8 +1,11 @@
 const Heading = ({ data, noMargin, secondary, right }) => {
+    const style = {
+        end: "justify-end",
+    };
     return (
         <>
             <div
-                className={`flex items-center ${right && "justify-end"} gap-6 ${
+                className={`flex items-center ${right && style.end} gap-6 ${
                     secondary && "text-secondary"
                 }`}
             >

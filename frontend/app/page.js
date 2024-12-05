@@ -3,6 +3,7 @@ import HeroSection from "@/components/heroSection";
 import ProductIntro from "@/components/productIntro";
 import ShortMenu from "@/components/shortMenu";
 import WorkingHours from "@/components/workingHours";
+import { getProductIntro, getShortMenu } from "@/data/homePageData";
 
 const data = [
     {
@@ -29,12 +30,16 @@ const data = [
     },
 ];
 
-export default function Home() {
+export default async function Home() {
+    const product = getProductIntro();
+    const shortMenu = getShortMenu({ limit: 6 });
+    const [productIntro, shortMenus] = await Promise.all([product, shortMenu]);
+
     return (
         <>
             <HeroSection />
             <section className="py-5 md:py-20">
-                {data.map((product) => (
+                {productIntro?.map((product) => (
                     <ProductIntro
                         key={product.id}
                         position={product.position}
@@ -42,7 +47,7 @@ export default function Home() {
                     />
                 ))}
             </section>
-            <ShortMenu />
+            <ShortMenu shortMenu={shortMenus} />
             <WorkingHours />
             <Gallery control={true} />
         </>

@@ -1,7 +1,10 @@
+import { getGallery } from "@/data/homePageData";
 import CustomImage from "./common/CustomImage";
 import Heading from "./common/heading";
 
-const Gallery = ({ control }) => {
+const Gallery = async ({ control }) => {
+    const gallery = await getGallery();
+
     return (
         <section className="py-14 md:py-20">
             <div className="container">
@@ -17,12 +20,13 @@ const Gallery = ({ control }) => {
                 </div>
 
                 <div className="columns-3 gap-2 md:gap-[30px] ">
-                    <CustomImage src="/assets/cookie.png" aspect="" />
-                    <CustomImage src="/assets/cookie.png" />
-                    <CustomImage src="/assets/cookie.png" />
-                    <CustomImage src="/assets/cookie.png" aspect="" />
-                    <CustomImage src="/assets/cookie.png" aspect="" />
-                    <CustomImage src="/assets/cookie.png" />
+                    {gallery?.map((gallery) => (
+                        <CustomImage
+                            key={gallery?.id}
+                            src={gallery?.Pictures?.url}
+                            aspect={gallery?.aspect}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

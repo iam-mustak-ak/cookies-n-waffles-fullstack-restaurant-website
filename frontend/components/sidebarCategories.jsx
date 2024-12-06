@@ -1,6 +1,13 @@
+import { getCategories } from "@/data/getMenuData";
 import Link from "next/link";
 
-const SidebarCategories = () => {
+const SidebarCategories = async () => {
+    const categories = await getCategories();
+
+    const totolItems = categories.reduce(
+        (acc, category) => acc + category?.menus?.length,
+        0
+    );
     return (
         <div>
             <h4 className="uppercase text-[32px] font-medium leading-[96%] my-6">
@@ -13,17 +20,25 @@ const SidebarCategories = () => {
                         className="flex items-center justify-between py-2"
                     >
                         <span className="font-semibold">All Menu</span>
-                        <span className="font-light">32</span>
+                        <span className="font-light">{totolItems}</span>
                     </Link>
                 </li>
-                {[...Array(5)].map((category, i) => (
-                    <li key={i} className="leading-[93%]">
+                {categories?.map((category, i) => (
+                    <li key={category?.documentId} className="leading-[93%]">
                         <Link
-                            href={`/menu/${i}`}
+                            href={`/menu/${encodeURIComponent(
+                                decodeURIComponent(category?.categoryName)
+                                    .replace(/\s+/g, "-")
+                                    .toLocaleLowerCase()
+                            )}?id=${category?.documentId}`}
                             className="flex items-center justify-between py-2"
                         >
-                            <span className="font-semibold">Cookies</span>
-                            <span className="font-light">32</span>
+                            <span className="font-semibold">
+                                {category?.categoryName}
+                            </span>
+                            <span className="font-light">
+                                {category?.menus?.length}
+                            </span>
                         </Link>
                     </li>
                 ))}
